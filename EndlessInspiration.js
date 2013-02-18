@@ -1,3 +1,13 @@
+//Thesaurus API
+
+$.getJSON("http://words.bighugelabs.com/apisample.php?v=2&format=json", {syn: "inspire"},
+
+function(data) {
+  console.log(data.items[0].noun.syn[0]);
+  document.getElementById('mainword').innerHTML = data.items[0].noun.syn;
+}
+);
+
 //flickr search API
 //http://www.flickr.com/search/?q=animal+OR+landscape&l=deriv&ss=0&ct=0&mt=photos&w=all&adv=1
 $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?",
@@ -15,8 +25,7 @@ $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?
   },
 
   function(data) {
-    var src = data.items[0].media.m.replace("_m.jpg","_b.jpg");
-    document.getElementById('inspireimg').src = src;
+    document.getElementById('inspireimg').src = data.items[0].media.m.replace("_m.jpg","_b.jpg");
 });
 
 
@@ -24,7 +33,7 @@ $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?
 //Twitter search API
 function onLoad(json) {
   var results = json.results;
-  for (var i = 0; i < results.length; i++){
+  for (var i = 0; i < results.length;i++){
   	if (results[i].text.indexOf("@") == -1 && results[i].text.indexOf("#") == -1 && results[i].text.indexOf("://") == -1 &&results[i].text.indexOf("\"") == -1) {
   		document.getElementById('posterText').innerHTML = results[i].text;
   	}
@@ -34,7 +43,7 @@ function onLoad(json) {
 function fetchJSON(query) {
   var script = document.createElement('script');
   //%20%3A results in positive sentiment
-  script.src = 'http://search.twitter.com/search.json?q=' + query + '&page=1&rpp=20&callback=onLoad&lang=en&truncated=false&possibly_sensitive=false%20%3A)';
+  script.src = 'http://search.twitter.com/search.json?q=' + query + '&page=1&rpp=10&callback=onLoad&lang=en&truncated=false&possibly_sensitive=false%20%3A)';
   document.getElementsByTagName('body')[0].appendChild(script);
 }
 
