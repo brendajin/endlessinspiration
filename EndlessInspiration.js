@@ -23,13 +23,17 @@ $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?
 		safe_search: "1",
 		content_type: "1",
 		media: "photos",
-		per_page:"10",
+		per_page:"20",
 		page: "1",
 	},
 
 	function(data) {
-		console.log(Math.floor(Math.random()*10));
-		document.getElementById('inspireimg').src = data.items[Math.floor(Math.random()*10)].media.m.replace("_m.jpg","_b.jpg");
+		var randImg = Math.floor(Math.random()*10);
+		// var testImg = new Image();
+		// testImg.src=data.items[randImg].media.m;
+		// console.log(testImg.width);
+
+		document.getElementById('inspireimg').src = data.items[randImg].media.m.replace("_m.jpg","_b.jpg");
 	});
 
 
@@ -57,7 +61,7 @@ function onLoad(json) {
 function fetchJSON(query) {
 	var script = document.createElement('script');
 	//%20%3A results in positive sentiment
-	script.src = 'http://search.twitter.com/search.json?q=' + query + '&page=1&rpp=20&callback=onLoad&lang=en&truncated=false&possibly_sensitive=false%20%3A)';
+	script.src = 'http://search.twitter.com/search.json?q=' + query + '&page=1&rpp=50&callback=onLoad&lang=en&truncated=false&possibly_sensitive=false%20%3A)';
 	document.getElementsByTagName('body')[0].appendChild(script);
 }
 
