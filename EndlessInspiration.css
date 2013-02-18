@@ -41,7 +41,7 @@
 }
 @media (min-width: 500px) and (max-width: 800px) {
   #posterText {
-    font-size:1rem;
+    font-size:.9rem;
   }
   #mainword {
     font-size: 4rem;

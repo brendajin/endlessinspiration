@@ -61,7 +61,7 @@ function onLoad(json) {
 function fetchJSON(query) {
 	var script = document.createElement('script');
 	//%20%3A results in positive sentiment
-	script.src = 'http://search.twitter.com/search.json?q=' + query + '&page=1&rpp=50&callback=onLoad&lang=en&truncated=false&possibly_sensitive=false%20%3A)';
+	script.src = 'http://search.twitter.com/search.json?q=' + query + '&page=1&rpp=100&callback=onLoad&lang=en&truncated=false&possibly_sensitive=false%20%3A)';
 	document.getElementsByTagName('body')[0].appendChild(script);
 }
 
