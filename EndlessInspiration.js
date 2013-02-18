@@ -1,12 +1,22 @@
-//Thesaurus API
+//grab words from curated JSON file
+$.ajax({type: "GET",
+  url: "words.json",
+  dataType: "json",
+  success: function(mainword) {
+    var start = Math.floor(Math.random()*mainword.syn.length);
+    //console.log(mainword.syn[start]);
+    document.getElementById('mainword').innerHTML = mainword.syn[start].toUpperCase();
+  }
+});
 
-$.getJSON("http://words.bighugelabs.com/apisample.php?v=2&format=json", {syn: "inspire"},
 
-function(data) {
-  console.log(data.items[0].noun.syn[0]);
-  document.getElementById('mainword').innerHTML = data.items[0].noun.syn;
-}
-);
+$.getJSON("http://words.bighugelabs.com/api/2/66b66ab6aa868a16d23c809b26064cd8/word/json",
+
+  function(data) {
+    console.log(data.items[0].noun.syn);
+});
+
+
 
 //flickr search API
 //http://www.flickr.com/search/?q=animal+OR+landscape&l=deriv&ss=0&ct=0&mt=photos&w=all&adv=1
