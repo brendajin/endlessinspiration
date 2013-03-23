@@ -1,57 +1,57 @@
 #frame {
-  display:block;
-  margin: 20px auto;
-  padding: 5% 10% 3%;
-  background-color:black;
-  text-align: center;
-  color: white;
+    display:block;
+    margin: 20px auto;
+    padding: 5% 10% 3%;
+    background-color:black;
+    text-align: center;
+    color: white;
 }
 
 #posterText {
-  font-family: Times, Serif;
-  line-height: 105%;
+    font-family: Times, Serif;
+    line-height: 105%;
 }
 
 #inspireimg{
-  padding: 2%;
-  border: 5px white ridge;
-  margin-bottom: 4%
+    padding: 2%;
+    border: 5px white ridge;
+    margin-bottom: 4%
 }
 
 #mainword{
-  font-family:'Cinzel', Serif;
-  line-height: 105%;
+    font-family:'Cinzel', Serif;
+    line-height: 105%;
 }
 
 @media (min-width: 1000px) {
-  #posterText {
-    font-size:1.5rem;
-  }
-  #mainword {
-    font-size: 7rem;
-  }
+    #posterText {
+        font-size:1.5rem;
+    }
+    #mainword {
+        font-size: 7rem;
+    }
 }
 @media (min-width: 800px) and (max-width: 1000px) {
-  #posterText {
-    font-size:1.2rem;
-  }
-  #mainword {
-    font-size: 5rem;
-  }
+    #posterText {
+        font-size:1.2rem;
+    }
+    #mainword {
+        font-size: 5rem;
+    }
 }
 @media (min-width: 500px) and (max-width: 800px) {
-  #posterText {
-    font-size:.9rem;
-  }
-  #mainword {
-    font-size: 4rem;
-  }
+    #posterText {
+        font-size:.9rem;
+    }
+    #mainword {
+        font-size: 4rem;
+    }
 }
 @media (min-width: 300px) and (max-width: 500px) {
-  #posterText {
-    font-size:.8rem;
-  }
-  #mainword {
-    font-size: 2rem;
-  }
+    #posterText {
+        font-size:.8rem;
+    }
+    #mainword {
+        font-size: 2rem;
+    }
 }
